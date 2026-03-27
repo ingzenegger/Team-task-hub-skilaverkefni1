@@ -1,0 +1,14 @@
+import type { Task } from "../tasks/types";
+//project types
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+
+  status: "planned" | "in progress" | "complete"; //default should be planned
+  createdOn: Date;
+  startDate?: Date;
+  dueDate?: Date;
+  color?: string;
+  tasks?: Task[];
+};
