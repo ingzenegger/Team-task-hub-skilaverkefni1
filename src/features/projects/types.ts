@@ -1,5 +1,5 @@
 import type { Task } from "../tasks/types";
-//project types
+
 export type Project = {
   id: string;
   title: string;

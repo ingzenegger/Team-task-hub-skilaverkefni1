@@ -1,4 +1,4 @@
-//demo data for testing and styling
+//demo data for potential testing and intial styling?
 
 import type { Project } from "../features/projects/types";
 import type { Task } from "../features/tasks/types";
