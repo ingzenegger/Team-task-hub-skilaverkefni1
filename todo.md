@@ -3,7 +3,7 @@
 ## Phase 1: Foundation & Architecture 🏗️
 
 - [x] Initialize Vite + React + TypeScript project.
-- [] Install dependencies (zod, lucide-react, and your chosen UI library like MUI or shadcn).
+- [x] Install dependencies (zod, zustand, lucide-react, and your chosen UI library like MUI or shadcn).
 - [x] Set up folder structure (features/, hooks/, components/, data/).
 - [x] Define global Types and Zod Schemas for Projects and Tasks.
 - [x] Create demoData.ts with mock projects and tasks.
