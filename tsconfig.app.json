@@ -10,6 +10,7 @@
 
     /*for shadCn*/
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0", //to sileence warning on "base url is deprecated and will stop functioning in tyepscript 7
     "paths": {
       "@/*": ["./src/*"]
     },

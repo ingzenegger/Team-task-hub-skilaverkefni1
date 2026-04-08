@@ -9,6 +9,7 @@ const due: Date = new Date(2026, 5, 1);
 export const demoTask1: Task = {
   id: "1-1",
   title: "demo task 1",
+  projectId: "1",
   description:
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum quisquam in consequuntur, modi sed beatae ea, voluptatibus odit similique doloremque dolorem eum eius eveniet temporibus, officiis ab nam optio a.",
   priority: "medium",
@@ -18,6 +19,7 @@ export const demoTask1: Task = {
 export const demoTask2: Task = {
   id: "1-2",
   title: "demo task 2",
+  projectId: "1",
   description:
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum quisquam in consequuntur, modi sed beatae ea, voluptatibus odit similique doloremque dolorem eum eius eveniet temporibus, officiis ab nam optio a.",
   priority: "high",

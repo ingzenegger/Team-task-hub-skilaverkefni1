@@ -10,5 +10,5 @@ export type Project = {
   startDate?: Date;
   dueDate?: Date;
   color?: string;
-  tasks?: Task[];
+  tasks?: Task[]; //TODO: remove this once done with demodata
 };

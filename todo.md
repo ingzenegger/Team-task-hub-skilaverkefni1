@@ -10,8 +10,8 @@
 
 ## Phase 2: Custom Hooks (The Logic) 🪝
 
-- [] Hook 1: Implement useLocalStorage with Zod parsing (to ensure data safety).
-- [] Set up Global State (Zustand or Context) to manage the list of projects and tasks.
+- [x] Hook 1: Implement useLocalStorage with Zod parsing (to ensure data safety).
+- [x] Set up Global State (Zustand or Context) to manage the list of projects and tasks.
 - [] Hook 2: Implement useTaskFilters (logic for searching, status, and priority filtering).
 - [] Hook 3: Create a helper hook (e.g., useProjectStats for the dashboard).
 
