@@ -38,5 +38,5 @@ export const demoProject: Project = {
   startDate: today,
   dueDate: due,
   color: "red",
-  tasks: [demoTask1, demoTask2],
+  // tasks: [demoTask1, demoTask2],
 };
