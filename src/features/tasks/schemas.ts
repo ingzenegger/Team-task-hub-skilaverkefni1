@@ -9,7 +9,7 @@ export const TaskSchema = z.object({
   description: z.string().default(""),
   priority: z.literal(["low", "medium", "high"]).default("low"),
   isCompleted: z.boolean().default(false),
-  createdOn: z.date(),
+  createdOn: z.coerce.date(),
 });
 
 // export const defaultTask = TaskSchema.parse({})

@@ -1,5 +1,3 @@
-import type { Task } from "../tasks/types";
-
 export type Project = {
   id: string;
   title: string;
@@ -8,7 +6,6 @@ export type Project = {
   status: "planned" | "in progress" | "complete"; //default should be planned
   createdOn: Date;
   startDate?: Date;
-  dueDate?: Date;
+  dueDate: Date;
   color?: string;
-  tasks?: Task[]; //TODO: remove this once done with demodata
 };

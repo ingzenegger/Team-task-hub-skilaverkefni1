@@ -21,7 +21,7 @@ export default function useTaskFilters(tasks: Task[]) {
         searchQuery !== "" &&
         task.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-        return false;
+        return true;
       return true;
     });
   }, [tasks, projectId, priority, isCompleted, searchQuery]);

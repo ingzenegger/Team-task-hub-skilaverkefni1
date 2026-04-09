@@ -13,7 +13,7 @@
 - [x] Hook 1: Implement useLocalStorage with Zod parsing (to ensure data safety).
 - [x] Set up Global State (Zustand or Context) to manage the list of projects and tasks.
 - [x] Hook 2: Implement useTaskFilters (logic for searching, status, and priority filtering as well as filtering tasks by the projectId).
-- [] Hook 3: Create a helper hook (e.g., useProjectStats for the dashboard).
+- [x] Hook 3: Create a helper hook (e.g., useProjectStats for the dashboard).
 
 ## Phase 3: Feature - Projects 📂
 
