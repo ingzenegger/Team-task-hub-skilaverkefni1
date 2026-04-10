@@ -7,8 +7,6 @@ import { useMemo } from "react";
 //will also filter total number of projects by status and tasks by priority
 
 export default function useProjectStats(projects: Project[], tasks: Task[]) {
-  
-
   const projectStats = useMemo(() => {
     return {
       totalProjects: projects.length,
@@ -45,13 +43,18 @@ export default function useProjectStats(projects: Project[], tasks: Task[]) {
         return 0;
       })
       .map((project) => {
+        const totalTasks = tasks.filter(
+          (task) => task.projectId === project.id,
+        ).length;
+        const completedTasks = tasks.filter(
+          (task) => task.projectId === project.id && task.isCompleted,
+        ).length;
+        const projectProgress = totalTasks === 0 ?  0 : (completedTasks / totalTasks) * 100;
         return {
           ...project,
-          totalTasks: tasks.filter((task) => task.projectId === project.id)
-            .length,
-          completedTasks: tasks.filter(
-            (task) => task.projectId === project.id && task.isCompleted,
-          ).length,
+          totalTasks,
+          completedTasks,
+          projectProgress,
         };
       });
   }, [tasks, projects]);
