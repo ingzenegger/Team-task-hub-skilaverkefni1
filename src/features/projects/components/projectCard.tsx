@@ -17,7 +17,7 @@ export interface DueProject extends Project {
 
 export default function ProjectCard(project: DueProject) {
   return (
-    <Card className="m-3">
+    <Card className="border m-3 transition duration-300 ease-in-out hover:border hover:border-emerald-600">
       <CardHeader>
         <CardTitle>{project.title}</CardTitle>
         <CardAction>

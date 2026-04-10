@@ -17,27 +17,29 @@
 
 ## Phase 3: Feature - Projects 📂
 
-- [] Create ProjectList component (View all projects).
+- [x] Create ProjectList component (View all projects).
+- [x] Create ProjectCard component
+- [x] create progressBar component
 - [] Create AddProjectForm with Zod validation.
 - [] Implement "Select Project" logic to filter which tasks are shown.
 
 ## Phase 4: Feature - Tasks 🛠️
 
-Create TaskList and TaskItem components.
-Implement Add Task functionality (with Zod validation).
-Implement Edit Task & Delete Task.
-Implement Toggle Complete (checkbox logic).
-Integrate useTaskFilters into the UI (Search bar + Dropdowns for Priority/Status).
+- [] Create TaskList and TaskItem components.
+- [] Implement Add Task functionality (with Zod validation).
+- [] Implement Edit Task & Delete Task.
+- [] Implement Toggle Complete (checkbox logic).
+- [] Integrate useTaskFilters into the UI (Search bar + Dropdowns for Priority/Status).
 
 ## Phase 5: Dashboard & UI Polish 📊
 
-Create Dashboard component showing total tasks, completed vs. pending.
-Ensure the app is responsive and looks clean with the UI library.
-Add loading states or "No tasks found" empty states.
+- [x] Create Dashboard component showing total tasks, completed vs. pending.
+- [] Ensure the app is responsive and looks clean with the UI library.
+- [] Add loading states or "No tasks found" empty states.
 
 ## Phase 6: Final Requirements & Cleanup 🧹
 
-Verify localStorage persistence (Refresh the page!).
-Audit TypeScript types (Ensure no any is used).
-Final Git check: Ensure at least 8 meaningful commits.
-Record the demo video 🎥.
+- [] Verify localStorage persistence (Refresh the page!).
+- [] Audit TypeScript types (Ensure no any is used).
+- [] Final Git check: Ensure at least 8 meaningful commits.
+- [] Record the demo video 🎥.

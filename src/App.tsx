@@ -1,13 +1,21 @@
-import taskLogo from "./assets/tasklogo.svg";
-
 import "./App.css";
 import { ProjectSchema } from "./features/projects/schemas";
-import { demoProject, demoTask1 } from "./data/demoData";
-import Sandbox from "./components/sandbox";
+import {
+  demoProject,
+  demoProject2,
+  demoTask1,
+  demoTask2,
+  demoTask3,
+  demoTask4,
+} from "./data/demoData"; //for building purposes
 import { useProjectStore } from "./hooks/useProjectStore";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useEffect } from "react";
+import { Routes, Route } from "react-router";
 import { TaskSchema } from "./features/tasks/schemas";
+import ProjectList from "./features/projects/components/projectList";
+import Dashboard from "./features/dashboard/components/dashboard";
+import Layout from "./components/layout";
 
 ProjectSchema.parse(demoProject);
 
@@ -19,10 +27,13 @@ function App() {
   const [savedProjects, setProjects] = useLocalStorage(
     "projects",
     ProjectSchema.array(),
-    [demoProject],
+    [demoProject, demoProject2],
   );
   const [savedTasks, setTasks] = useLocalStorage("tasks", TaskSchema.array(), [
     demoTask1,
+    demoTask2,
+    demoTask3,
+    demoTask4,
   ]);
   //populate state with saved data from local storage
   useEffect(() => {
@@ -40,26 +51,12 @@ function App() {
   }, [tasks]);
 
   return (
-    <>
-      <div>
-        <img src={taskLogo} className="h-25" />
-        <h1>Welcome to Ingzenegger Task Hub</h1>
-
-        <Sandbox />
-
-        <div className={"border-2 border-red-800"}>
-          <h1>this demo div lives in the app.tsx</h1>
-          <h2>Demo project title: {projects[0].title}</h2>
-          <p>Description: {projects[0].description}</p>
-          <p>Demo task: {tasks[0].title}</p>
-        </div>
-
-        {/* <h2>{demoProject.title}</h2>
-        <Camera color="green" />
-        <p>{demoProject.description}</p>
-        <p>Project due date: {demoProject.dueDate?.toLocaleDateString()}</p> */}
-      </div>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/projects" element={<ProjectList />} />
+      </Routes>
+    </Layout>
   );
 }
 
