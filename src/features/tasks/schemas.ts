@@ -7,7 +7,7 @@ export const TaskSchema = z.object({
   title: z.coerce.string().default("new task"),
   projectId: z.string(),
   description: z.string().default(""),
-  priority: z.literal(["low", "medium", "high"]).default("low"),
+  priority: z.enum(["low", "medium", "high"]).default("low"),
   isCompleted: z.boolean().default(false),
   createdOn: z.coerce.date(),
 });

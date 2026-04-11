@@ -55,8 +55,7 @@ export const demoProject: Project = {
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum quisquam in consequuntur, modi sed beatae ea, voluptatibus odit similique doloremque dolorem eum eius eveniet temporibus, officiis ab nam optio a.",
 
   status: "in progress",
-  createdOn: today,
-  startDate: today,
+
   dueDate: due,
   color: "red",
 };
@@ -67,8 +66,7 @@ export const demoProject2: Project = {
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum quisquam in consequuntur, modi sed beatae ea, voluptatibus odit similique doloremque dolorem eum eius eveniet temporibus, officiis ab nam optio a.",
 
   status: "in progress",
-  createdOn: today,
-  startDate: today,
+
   dueDate: due2,
   color: "blue",
 };

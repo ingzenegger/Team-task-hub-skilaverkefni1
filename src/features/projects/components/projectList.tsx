@@ -9,11 +9,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router";
 
 export default function ProjectList() {
   const projects = useProjectStore((state) => state.projects);
   const tasks = useProjectStore((state) => state.tasks);
   const { dueProjects } = useProjectStats(projects, tasks);
+  const navigate = useNavigate();
 
   return (
     <Card className="ring-0">
@@ -23,6 +25,7 @@ export default function ProjectList() {
           <Button
             className="transition duration-300 ease-in-out hover:bg-green-700"
             size={"lg"}
+            onClick={() => navigate("/projects/new")}
           >
             Add Project
           </Button>

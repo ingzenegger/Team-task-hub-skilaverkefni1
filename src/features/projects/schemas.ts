@@ -5,9 +5,8 @@ export const ProjectSchema = z.object({
   id: z.string(),
   title: z.coerce.string().default("Project title"),
   description: z.string().default(""),
-  status: z.literal(["planned", "in progress", "complete"]).default("planned"),
-  createdOn: z.coerce.date(),
-  startDate: z.coerce.date().optional(),
+  status: z.enum(["planned", "in progress", "complete"]).default("planned"),
+
   dueDate: z.coerce.date(),
   color: z.string().optional(),
 });

@@ -4,8 +4,7 @@ export type Project = {
   description: string;
 
   status: "planned" | "in progress" | "complete"; //default should be planned
-  createdOn: Date;
-  startDate?: Date;
+
   dueDate: Date;
   color?: string;
 };

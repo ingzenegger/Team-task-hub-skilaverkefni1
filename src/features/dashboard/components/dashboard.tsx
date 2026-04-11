@@ -11,6 +11,7 @@ import ProjectCard from "../../projects/components/projectCard";
 import { Button } from "@/components/ui/button";
 import PriorityBar from "./priorityBar";
 import StatusBar from "./statusBar";
+import { useNavigate } from "react-router";
 
 export default function Dashboard() {
   const projects = useProjectStore((state) => state.projects);
@@ -28,6 +29,8 @@ export default function Dashboard() {
     (projectStats.inProgressProjects / projectStats.totalProjects) * 100;
   const planned =
     (projectStats.plannedProjects / projectStats.totalProjects) * 100;
+
+  const navigate = useNavigate();
 
   return (
     <div className="w-3/4 flex flex-col justify-self-center-safe gap-3 mb-3">
@@ -52,7 +55,9 @@ export default function Dashboard() {
         <CardHeader>
           <CardTitle>Projects total: {projectStats.totalProjects}</CardTitle>
           <CardAction>
-            <Button variant={"outline"}>View all</Button>
+            <Button variant={"outline"} onClick={() => navigate("/projects")}>
+              View all
+            </Button>
           </CardAction>
         </CardHeader>
         <CardContent>

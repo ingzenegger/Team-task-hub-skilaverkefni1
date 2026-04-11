@@ -1,52 +1,49 @@
 import "./App.css";
 import { ProjectSchema } from "./features/projects/schemas";
-import {
-  demoProject,
-  demoProject2,
-  demoTask1,
-  demoTask2,
-  demoTask3,
-  demoTask4,
-} from "./data/demoData"; //for building purposes
+
 import { useProjectStore } from "./hooks/useProjectStore";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Routes, Route } from "react-router";
 import { TaskSchema } from "./features/tasks/schemas";
 import ProjectList from "./features/projects/components/projectList";
 import Dashboard from "./features/dashboard/components/dashboard";
 import Layout from "./components/layout";
-
-ProjectSchema.parse(demoProject);
+import ProjectForm from "./features/projects/components/ProjectForm/projectForm";
 
 function App() {
   const projects = useProjectStore((state) => state.projects);
   const tasks = useProjectStore((state) => state.tasks);
+  const projectsLoaded = useRef(false);
+  const tasksLoaded = useRef(false);
   //fetch projects and tasks data from local storage along with the save functionality
-  //TODO: remember to replace the demo data with a [] as default
+
   const [savedProjects, setProjects] = useLocalStorage(
     "projects",
     ProjectSchema.array(),
-    [demoProject, demoProject2],
+    [],
   );
-  const [savedTasks, setTasks] = useLocalStorage("tasks", TaskSchema.array(), [
-    demoTask1,
-    demoTask2,
-    demoTask3,
-    demoTask4,
-  ]);
+  const [savedTasks, setTasks] = useLocalStorage(
+    "tasks",
+    TaskSchema.array(),
+    [],
+  );
   //populate state with saved data from local storage
   useEffect(() => {
     useProjectStore.setState({ projects: savedProjects });
+    projectsLoaded.current = true;
   }, []);
   useEffect(() => {
     useProjectStore.setState({ tasks: savedTasks });
+    tasksLoaded.current = true;
   }, []);
   //save changes in state back to the local storage
   useEffect(() => {
+    if (!projectsLoaded.current) return;
     setProjects(projects);
   }, [projects]);
   useEffect(() => {
+    if (!tasksLoaded.current) return;
     setTasks(tasks);
   }, [tasks]);
 
@@ -55,6 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/projects" element={<ProjectList />} />
+        <Route path="/projects/new" element={<ProjectForm />} />
       </Routes>
     </Layout>
   );

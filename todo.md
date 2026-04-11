@@ -20,7 +20,7 @@
 - [x] Create ProjectList component (View all projects).
 - [x] Create ProjectCard component
 - [x] create progressBar component
-- [] Create AddProjectForm with Zod validation.
+- [x] Create AddProjectForm with Zod validation.
 - [] Implement "Select Project" logic to filter which tasks are shown.
 
 ## Phase 4: Feature - Tasks 🛠️
