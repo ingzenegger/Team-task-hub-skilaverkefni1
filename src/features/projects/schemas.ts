@@ -8,7 +8,7 @@ export const ProjectSchema = z.object({
   status: z.enum(["planned", "in progress", "complete"]).default("planned"),
 
   dueDate: z.coerce.date(),
-  color: z.string().optional(),
+  color: z.enum(["blue", "violet", "fuchsia"]).optional(),
 });
 
 // export const defaultProject = ProjectSchema.parse({});

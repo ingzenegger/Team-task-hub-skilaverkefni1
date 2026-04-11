@@ -11,16 +11,12 @@ import type { Project } from "../../types";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 
-import FormSelect from "./formSelect";
+import FormSelect from "../../../../components/formSelect";
 import { Button } from "@/components/ui/button";
 import { ProjectSchema } from "../../schemas";
 import { useProjectStore } from "@/hooks/useProjectStore";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+
+import { useNavigate } from "react-router";
 
 const INITIAL_VALUES: Project = {
   id: "",
@@ -34,14 +30,20 @@ const INITIAL_VALUES: Project = {
 export default function ProjectForm() {
   const [values, setValues] = useState<Project>(INITIAL_VALUES);
   const [error, setError] = useState<string | null>(null);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const addProject = useProjectStore((state) => state.addProject);
+  const navigate = useNavigate();
 
   const selectStatusValues = [
     { label: "Planned", value: "planned" },
     { label: "In progress", value: "in progress" },
     { label: "Completed", value: "complete" },
+  ];
+
+  const selectColorValues = [
+    { label: "Blue", value: "blue" },
+    { label: "Violet", value: "violet" },
+    { label: "Fuchsia", value: "fuchsia" },
   ];
 
   function onSubmit() {
@@ -57,7 +59,8 @@ export default function ProjectForm() {
       const validated = ProjectSchema.parse(newProject);
       addProject(validated);
       setValues(INITIAL_VALUES);
-      setShowSuccess(true);
+      navigate(`/projects/${id}`);
+      // setShowSuccess(true);
       //show success modal
       //go to project page
     } catch (error) {
@@ -133,6 +136,15 @@ export default function ProjectForm() {
                       onValueChange={(value) => onInputChange("status", value)}
                     ></FormSelect>
                   </Field>
+                  <Field>
+                    <FieldLabel>Project color:</FieldLabel>
+                    <FormSelect
+                      items={selectColorValues}
+                      defaultValue=""
+                      label="Project color"
+                      onValueChange={(value) => onInputChange("color", value)}
+                    ></FormSelect>
+                  </Field>
                 </FieldGroup>
               </FieldSet>
             </FieldGroup>
@@ -144,13 +156,6 @@ export default function ProjectForm() {
           </CardFooter>
         </form>
       </Card>
-      <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Project saved successfully!</DialogTitle>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

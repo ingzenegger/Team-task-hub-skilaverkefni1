@@ -6,5 +6,5 @@ export type Project = {
   status: "planned" | "in progress" | "complete"; //default should be planned
 
   dueDate: Date;
-  color?: string;
+  color?: "blue" | "violet" | "fuchsia";
 };

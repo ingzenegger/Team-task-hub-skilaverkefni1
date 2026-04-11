@@ -20,8 +20,11 @@ export default function useTaskFilters(tasks: Task[]) {
       if (
         searchQuery !== "" &&
         task.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-        return true;
+      )return true;
+      if (
+        searchQuery !== "" &&
+        !task.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )return false;
       return true;
     });
   }, [tasks, projectId, priority, isCompleted, searchQuery]);

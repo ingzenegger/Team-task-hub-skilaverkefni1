@@ -35,7 +35,7 @@ export default function ProjectList() {
       <CardContent>
         {/* <div className={"w-auto m-4 border-2 border-green-700 gap-2 "}> */}
         {dueProjects.map((project) => (
-          <ProjectCard {...project} />
+          <ProjectCard {...project}/>
         ))}
       </CardContent>
     </Card>

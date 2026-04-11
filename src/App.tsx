@@ -10,6 +10,7 @@ import ProjectList from "./features/projects/components/projectList";
 import Dashboard from "./features/dashboard/components/dashboard";
 import Layout from "./components/layout";
 import ProjectForm from "./features/projects/components/ProjectForm/projectForm";
+import ProjectDetails from "./features/projects/components/projectDetail";
 
 function App() {
   const projects = useProjectStore((state) => state.projects);
@@ -53,6 +54,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/new" element={<ProjectForm />} />
+        <Route path="/projects/:id" element={<ProjectDetails/>} />
       </Routes>
     </Layout>
   );

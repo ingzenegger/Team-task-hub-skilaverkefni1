@@ -21,12 +21,12 @@
 - [x] Create ProjectCard component
 - [x] create progressBar component
 - [x] Create AddProjectForm with Zod validation.
-- [] Implement "Select Project" logic to filter which tasks are shown.
+- [x] Implement "Select Project" logic to filter which tasks are shown. - clicking on project takes user to projects details which shows the tasks...
 
 ## Phase 4: Feature - Tasks 🛠️
 
 - [] Create TaskList and TaskItem components.
-- [] Implement Add Task functionality (with Zod validation).
+- [x] Implement Add Task functionality (with Zod validation).
 - [] Implement Edit Task & Delete Task.
 - [] Implement Toggle Complete (checkbox logic).
 - [] Integrate useTaskFilters into the UI (Search bar + Dropdowns for Priority/Status).
